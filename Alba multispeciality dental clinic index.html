@@ -1,581 +1,1457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Alba Multispeciality Dental Clinic</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<meta name="description"
+      content="Dr. S. Peter MDS Dental Clinic, Puducherry">
 
-        html {
-            scroll-behavior: smooth;
-        }
+<title>Dr. S. Peter MDS | Dental Clinic</title>
 
-        body {
-            background: #ffffff;
-            color: #222;
-            line-height: 1.6;
-        }
+<!-- Google Font -->
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-        /* NAVBAR */
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-        header {
-            width: 100%;
-            background: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
-        nav {
-            max-width: 1200px;
-            margin: auto;
-            padding: 10px 25px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
+<!-- QR CODE LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-        .clinic-logo {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-        }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+<style>
 
-        .nav-links a {
-            text-decoration: none;
-            color: #7d0b1a;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+/* =====================================================
+   RESET
+===================================================== */
 
-        .nav-links a:hover {
-            color: #d49a00;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* HERO SECTION */
+html {
+    scroll-behavior: smooth;
+}
 
-        .hero {
-            min-height: 600px;
-            background: linear-gradient(135deg, #7d0b1a, #b3122d);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 10%;
-        }
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f7f9fc;
+    color: #172033;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        .hero-content {
-            width: 55%;
-        }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-        .hero h1 {
-            font-size: 52px;
-            margin-bottom: 15px;
-        }
+a {
+    text-decoration: none;
+}
 
-        .hero h2 {
-            font-size: 25px;
-            color: #ffd35a;
-            margin-bottom: 20px;
-        }
+.container {
+    width: min(1120px, calc(100% - 32px));
+    margin: auto;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
 
-        .hero-btn {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #f5b400;
-            color: #111;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: 0.3s;
-        }
+/* =====================================================
+   HEADER
+===================================================== */
 
-        .hero-btn:hover {
-            transform: scale(1.05);
-            background: white;
-        }
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-        .doctor-image {
-            width: 40%;
-            text-align: center;
-        }
+    background: rgba(255,255,255,0.97);
 
-        .doctor-image img {
-            width: 100%;
-            max-width: 430px;
-            border-radius: 50%;
-            border: 6px solid #ffffff;
-            object-fit: cover;
-        }
+    border-bottom: 1px solid #e5e8ee;
 
-        /* ABOUT SECTION */
+    backdrop-filter: blur(10px);
+}
 
-        .about {
-            padding: 80px 10%;
-            text-align: center;
-        }
+.nav {
+    min-height: 76px;
 
-        .section-title {
-            font-size: 38px;
-            color: #7d0b1a;
-            margin-bottom: 20px;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        .about p {
-            max-width: 850px;
-            margin: auto;
-            font-size: 17px;
-            color: #555;
-        }
+    gap: 15px;
+}
 
-        /* DOCTOR SECTION */
 
-        .doctor-section {
-            background: #f7f7f7;
-            padding: 80px 10%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 60px;
-        }
+/* LOGO + NAME */
 
-        .doctor-section img {
-            width: 320px;
-            max-width: 100%;
-            border-radius: 50%;
-        }
+.brand {
+    display: flex;
+    align-items: center;
 
-        .doctor-info {
-            max-width: 600px;
-        }
+    gap: 12px;
 
-        .doctor-info h2 {
-            font-size: 36px;
-            color: #7d0b1a;
-            margin-bottom: 15px;
-        }
+    color: #172033;
 
-        .doctor-info h3 {
-            color: #d49a00;
-            margin-bottom: 20px;
-        }
+    font-size: 20px;
+    font-weight: 800;
+}
 
-        .doctor-info p {
-            color: #555;
-            font-size: 17px;
-        }
+.brand img {
+    width: 55px;
+    height: 55px;
 
-        /* SERVICES */
+    object-fit: contain;
 
-        .services {
-            padding: 80px 10%;
-            text-align: center;
-        }
+    border-radius: 50%;
+}
 
-        .services-image {
-            margin: 30px auto;
-            max-width: 700px;
-        }
 
-        .services-image img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
+/* WHATSAPP HEADER BUTTON */
 
-        .services-grid {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.nav-whatsapp {
+    background: #168a57;
+    color: white;
 
-        .service-box {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border-bottom: 4px solid #d49a00;
-        }
+    padding: 10px 18px;
 
-        .service-box:hover {
-            transform: translateY(-8px);
-        }
+    border-radius: 50px;
 
-        .service-box h3 {
-            color: #7d0b1a;
-            margin-bottom: 10px;
-        }
+    font-weight: 700;
 
-        /* CONTACT */
+    white-space: nowrap;
+}
 
-        .contact {
-            background: #7d0b1a;
-            color: white;
-            padding: 80px 10%;
-            text-align: center;
-        }
+.nav-whatsapp:hover {
+    background: #106c44;
+}
 
-        .contact h2 {
-            font-size: 38px;
-            margin-bottom: 30px;
-        }
 
-        .contact-details {
-            max-width: 700px;
-            margin: auto;
-        }
+/* =====================================================
+   HERO SECTION
+===================================================== */
 
-        .contact-details p {
-            font-size: 18px;
-            margin: 15px 0;
-        }
+.hero {
+    padding: 70px 0;
 
-        .contact a {
-            color: #ffd35a;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    background:
+        linear-gradient(
+            135deg,
+            #f1f5ff 0%,
+            #ffffff 50%,
+            #f4fbf8 100%
+        );
+}
 
-        /* FOOTER */
+.hero-grid {
+    display: grid;
 
-        footer {
-            background: #171717;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+    grid-template-columns:
+        1.05fr
+        0.95fr;
 
-        /* MOBILE RESPONSIVE */
+    align-items: center;
 
-        @media(max-width: 768px) {
+    gap: 55px;
+}
 
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
 
-            .nav-links {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+/* SMALL TITLE */
 
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding: 50px 20px;
-            }
+.eyebrow {
+    color: #a56800;
 
-            .hero-content,
-            .doctor-image {
-                width: 100%;
-            }
+    font-size: 13px;
 
-            .hero h1 {
-                font-size: 38px;
-            }
+    font-weight: 800;
 
-            .doctor-image img {
-                max-width: 300px;
-                margin-bottom: 30px;
-            }
+    letter-spacing: 2px;
 
-            .doctor-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 60px 20px;
-            }
+    margin-bottom: 10px;
+}
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
 
-        }
+/* MAIN TITLE */
 
-    </style>
+h1 {
+    font-size: clamp(40px, 6vw, 72px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    color: #172033;
+}
+
+h1 span {
+    white-space: nowrap;
+}
+
+
+/* DESCRIPTION */
+
+.hero-text {
+    max-width: 650px;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    color: #5c687a;
+
+    font-size: 19px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.action-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.btn {
+    min-height: 50px;
+
+    padding: 12px 22px;
+
+    border-radius: 12px;
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 800;
+
+    border: 2px solid transparent;
+
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* GOLD BUTTON */
+
+.btn-primary {
+    background: #a86a00;
+
+    color: white;
+
+    box-shadow:
+        0 8px 22px
+        rgba(168,106,0,0.22);
+}
+
+.btn-primary:hover {
+    background: #875500;
+}
+
+
+/* OUTLINE BUTTON */
+
+.btn-outline {
+    background: white;
+
+    color: #8b5900;
+
+    border-color: #a86a00;
+}
+
+.btn-outline:hover {
+    background: #fff7e8;
+}
+
+
+/* =====================================================
+   CONTACT BOX
+===================================================== */
+
+.contact-card {
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 12px;
+}
+
+.contact-item {
+    background: white;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e4e8ef;
+
+    box-shadow:
+        0 8px 25px
+        rgba(20,30,50,0.06);
+}
+
+.contact-item strong {
+    display: block;
+
+    color: #697587;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.contact-item a {
+    color: #172033;
+
+    font-weight: 800;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   DOCTOR IMAGE
+===================================================== */
+
+.doctor-card {
+    background: white;
+
+    padding: 14px;
+
+    border-radius: 28px;
+
+    border: 1px solid #e5e8ee;
+
+    box-shadow:
+        0 20px 60px
+        rgba(20,30,50,0.15);
+}
+
+.doctor-image {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+
+.doctor-caption {
+    text-align: center;
+
+    padding: 14px 8px 8px;
+}
+
+.doctor-caption h2 {
+    font-size: 28px;
+}
+
+.doctor-caption p {
+    color: #6b7585;
+}
+
+
+/* =====================================================
+   CLINIC DETAILS
+===================================================== */
+
+.details {
+    padding: 75px 0;
+
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    margin-bottom: 38px;
+}
+
+.section-title h2 {
+    font-size: clamp(30px, 4vw, 44px);
+
+    line-height: 1.15;
+
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #687386;
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+
+    border-radius: 20px;
+
+    border: 1px solid #e1e6ed;
+
+    background: white;
+
+    box-shadow:
+        0 12px 35px
+        rgba(20,30,50,0.07);
+}
+
+
+/* ADDRESS */
+
+.address-card {
+    background: #f8fafc;
+}
+
+.icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #596579;
+}
+
+.map-link {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #8b5900;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   QR CARDS
+===================================================== */
+
+.qr-header {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: flex-start;
+}
+
+.qr-header .icon {
+    margin: 0;
+}
+
+.qr-header h3 {
+    margin: 0;
+}
+
+.qr-header p {
+    font-size: 14px;
+
+    margin-top: 4px;
+}
+
+
+/* QR BOX */
+
+.qr-box {
+    width: 220px;
+    height: 220px;
+
+    margin: 24px auto;
+
+    padding: 10px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid #e0e5eb;
+
+    border-radius: 12px;
+}
+
+.qr-box canvas,
+.qr-box img {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+
+/* FULL BUTTON */
+
+.full {
+    width: 100%;
+}
+
+
+/* =====================================================
+   APPOINTMENT SECTION
+===================================================== */
+
+.appointment {
+    padding: 65px 0;
+
+    background: #172033;
+
+    color: white;
+}
+
+.appointment-box {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+}
+
+.appointment h2 {
+    font-size: clamp(30px,4vw,44px);
+
+    line-height: 1.15;
+
+    margin-bottom: 12px;
+}
+
+.appointment p {
+    color: #c8d0dc;
+
+    max-width: 700px;
+}
+
+.appointment .eyebrow {
+    color: #ffd15a;
+}
+
+.large-button {
+    min-width: 280px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #0f1522;
+
+    color: white;
+
+    padding: 25px 0;
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+.footer-content img {
+    width: 60px;
+    height: 60px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.footer-content p {
+    color: #adb6c4;
+
+    font-size: 14px;
+
+    margin-top: 4px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .hero-copy {
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .action-row {
+        justify-content: center;
+    }
+
+    .doctor-card {
+        width: min(600px, 100%);
+
+        margin: auto;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .address-card {
+        grid-column: 1 / -1;
+    }
+
+    .appointment-box {
+        flex-direction: column;
+
+        text-align: center;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 620px) {
+
+    .container {
+        width: calc(100% - 22px);
+    }
+
+    .nav {
+        min-height: 68px;
+    }
+
+    .brand {
+        font-size: 15px;
+    }
+
+    .brand img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nav-whatsapp {
+        padding: 9px 12px;
+
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 45px 0 55px;
+    }
+
+    h1 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-text {
+        font-size: 17px;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+
+        text-align: left;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .address-card {
+        grid-column: auto;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .qr-box {
+        width: 220px;
+        max-width: 100%;
+    }
+
+    .appointment {
+        padding: 50px 0;
+    }
+
+    .large-button {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .footer-content {
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .brand {
+        font-size: 14px;
+    }
+
+    .nav-whatsapp {
+        font-size: 12px;
+
+        padding: 8px 10px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .action-row {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print {
+
+    header,
+    .action-row,
+    .appointment {
+        display: none;
+    }
+
+    body {
+        background: white;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- NAVIGATION -->
 
-    <header>
-        <nav>
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-            <div class="logo-container">
-                <img 
-                    src="logo.png"
-                    alt="Alba Multispeciality Dental Clinic Logo"
-                    class="clinic-logo"
-                >
-            </div>
+<header>
 
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#doctor">Doctor</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-        </nav>
-    </header>
+<div class="container nav">
 
 
-    <!-- HERO SECTION -->
+    <!-- LOGO -->
 
-    <section class="hero" id="home">
+    <a href="#home"
+       class="brand">
 
-        <div class="hero-content">
+        <img src="logo.jpg"
+             alt="Dental Clinic Logo">
 
-            <h1>Alba Multispeciality Dental Clinic</h1>
+        <span>
+            Dr. S. Peter MDS
+        </span>
 
-            <h2>Your Smile, Our Priority</h2>
+    </a>
 
-            <p>
-                Professional and compassionate dental care for you and your family.
-                We provide modern dental treatments to help you achieve a healthy
-                and confident smile.
-            </p>
 
-            <a href="#contact" class="hero-btn">
-                Book an Appointment
+    <!-- WHATSAPP -->
+
+    <a href="https://wa.me/919489960857"
+       class="nav-whatsapp"
+       target="_blank"
+       rel="noopener">
+
+        WhatsApp
+
+    </a>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero"
+         id="home">
+
+<div class="container hero-grid">
+
+
+    <!-- LEFT SIDE -->
+
+    <div class="hero-copy">
+
+
+        <p class="eyebrow">
+            DENTAL CARE • PUDUCHERRY
+        </p>
+
+
+        <h1>
+            Dr. S. Peter
+            <span>MDS</span>
+        </h1>
+
+
+        <p class="hero-text">
+
+            Professional dental care with convenient
+            appointment booking and easy access to
+            our clinic location.
+
+        </p>
+
+
+        <!-- BUTTONS -->
+
+        <div class="action-row">
+
+
+            <!-- BOOK APPOINTMENT -->
+
+            <a class="btn btn-primary"
+
+               href="https://wa.me/919489960857?text=Hello%20Dr.%20S.%20Peter%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment."
+
+               target="_blank"
+
+               rel="noopener">
+
+                📅 Book Appointment
+
             </a>
 
-        </div>
 
+            <!-- CALL -->
 
-        <div class="doctor-image">
+            <a class="btn btn-outline"
 
-            <img
-                src="doctor.png"
-                alt="Dr S. Peter MDS"
-            >
+               href="tel:+919489960857">
 
-        </div>
+                📞 Call Now
 
-    </section>
+            </a>
 
-
-    <!-- ABOUT -->
-
-    <section class="about" id="about">
-
-        <h2 class="section-title">
-            Welcome to Alba Dental Clinic
-        </h2>
-
-        <p>
-            Alba Multispeciality Dental Clinic provides quality dental care
-            with a focus on patient comfort, hygiene and modern treatment.
-            We are committed to helping every patient maintain a healthy,
-            beautiful and confident smile.
-        </p>
-
-    </section>
-
-
-    <!-- DOCTOR -->
-
-    <section class="doctor-section" id="doctor">
-
-        <img
-            src="doctor.png"
-            alt="Dr S. Peter"
-        >
-
-        <div class="doctor-info">
-
-            <h2>Dr. S. Peter</h2>
-
-            <h3>MDS</h3>
-
-            <p>
-                Dr. S. Peter provides professional dental treatment with
-                personalized care for every patient. Our clinic focuses on
-                modern dental solutions, patient comfort and maintaining
-                long-term oral health.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section class="services" id="services">
-
-        <h2 class="section-title">
-            Our Dental Services
-        </h2>
-
-        <div class="services-image">
-
-            <img
-                src="services.jpg"
-                alt="Alba Dental Clinic Services"
-            >
 
         </div>
 
 
-        <div class="services-grid">
+        <!-- CONTACT DETAILS -->
 
-            <div class="service-box">
-                <h3>Dental Implants</h3>
-                <p>Permanent solutions for replacing missing teeth.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Crowns & Bridges</h3>
-                <p>Restore damaged or missing teeth with quality treatment.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Smile Designing</h3>
-                <p>Improve the appearance of your smile.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Root Canal Treatment</h3>
-                <p>Advanced treatment to save and protect your natural teeth.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Invisible Aligners</h3>
-                <p>Comfortable and clear teeth alignment solutions.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Teeth Cleaning & Whitening</h3>
-                <p>Professional cleaning and brighter smiles.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Full Mouth Rehabilitation</h3>
-                <p>Complete dental restoration and smile improvement.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Pediatric Dentistry</h3>
-                <p>Special dental care for children.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Tooth Coloured Fillings</h3>
-                <p>Natural-looking fillings for damaged teeth.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Orthodontic Braces</h3>
-                <p>Correct teeth alignment and improve your smile.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Complete & Partial Dentures</h3>
-                <p>Comfortable solutions for missing teeth.</p>
-            </div>
-
-            <div class="service-box">
-                <h3>Digital X-Ray</h3>
-                <p>Modern diagnostic imaging for accurate treatment.</p>
-            </div>
-
-        </div>
-
-    </section>
+        <div class="contact-card">
 
 
-    <!-- CONTACT -->
+            <div class="contact-item">
 
-    <section class="contact" id="contact">
+                <strong>
+                    WhatsApp / Phone
+                </strong>
 
-        <h2>Contact Us</h2>
-
-        <div class="contact-details">
-
-            <p>
-                <strong>Dr. S. Peter, MDS</strong>
-            </p>
-
-            <p>
-                📞
                 <a href="tel:+919489960857">
+
                     +91 94899 60857
-                </a>
-            </p>
 
-            <p>
-                📞
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <strong>
+                    Alternate Phone
+                </strong>
+
                 <a href="tel:+919342404873">
+
                     +91 93424 04873
+
                 </a>
-            </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         DOCTOR IMAGE
+    ================================================== -->
+
+    <div class="doctor-card">
+
+
+        <img src="doctor.jpg"
+
+             alt="Dr. S. Peter MDS"
+
+             class="doctor-image">
+
+
+        <div class="doctor-caption">
+
+            <h2>
+                Dr. S. Peter MDS
+            </h2>
 
             <p>
-                📍 No. 34, 3rd Main Road,
-                Mariyal Nagar,
-                Reddiyarpalayam,
-                Puducherry - 10
+                Dental Surgeon
             </p>
 
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- FOOTER -->
+</div>
 
-    <footer>
+</section>
 
-        <p>
-            © 2026 Alba Multispeciality Dental Clinic. All Rights Reserved.
+
+
+<!-- =====================================================
+     CLINIC DETAILS
+===================================================== -->
+
+<section class="details">
+
+<div class="container">
+
+
+    <div class="section-title">
+
+        <p class="eyebrow">
+            VISIT & BOOK
         </p>
 
-    </footer>
+        <h2>
+            Clinic Details
+        </h2>
+
+        <p>
+            Scan the QR codes to find the clinic
+            or book your appointment.
+        </p>
+
+    </div>
 
 
-    <!-- JAVASCRIPT -->
 
-    <script>
+    <div class="cards">
 
-        // Smooth message when appointment button is clicked
 
-        document.querySelector(".hero-btn").addEventListener("click", function() {
+        <!-- =================================================
+             ADDRESS CARD
+        ================================================== -->
 
-            console.log("Appointment section opened");
+        <article class="card address-card">
 
-        });
 
-    </script>
+            <div class="icon">
+                📍
+            </div>
+
+
+            <h3>
+                Clinic Address
+            </h3>
+
+
+            <p>
+
+                No. 34, 3rd Main Road,<br>
+
+                Marriyal Nagar,<br>
+
+                Reddiyarpalayam,<br>
+
+                Puducherry - 10
+
+            </p>
+
+
+            <a href="#"
+               id="mapLink"
+               class="map-link"
+               target="_blank"
+               rel="noopener">
+
+                Open in Google Maps →
+
+            </a>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             LOCATION QR
+        ================================================== -->
+
+        <article class="card">
+
+
+            <div class="qr-header">
+
+
+                <div class="icon">
+                    📍
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Exact Location
+                    </h3>
+
+                    <p>
+                        Scan to open the clinic
+                        location in Google Maps.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- QR CODE -->
+
+            <div class="qr-box">
+
+                <div id="locationQR"></div>
+
+            </div>
+
+
+            <a href="#"
+               id="locationButton"
+               class="btn btn-outline full"
+               target="_blank"
+               rel="noopener">
+
+                📍 Open Location
+
+            </a>
+
+
+        </article>
+
+
+
+        <!-- =================================================
+             APPOINTMENT QR
+        ================================================== -->
+
+        <article class="card">
+
+
+            <div class="qr-header">
+
+
+                <div class="icon">
+                    📅
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Book Appointment
+                    </h3>
+
+                    <p>
+                        Scan to start a WhatsApp
+                        appointment request.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- QR CODE -->
+
+            <div class="qr-box">
+
+                <div id="appointmentQR"></div>
+
+            </div>
+
+
+            <a href="#"
+               id="appointmentButton"
+               class="btn btn-primary full"
+               target="_blank"
+               rel="noopener">
+
+                💬 Book on WhatsApp
+
+            </a>
+
+
+        </article>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     APPOINTMENT SECTION
+===================================================== -->
+
+<section class="appointment">
+
+<div class="container appointment-box">
+
+
+    <div>
+
+        <p class="eyebrow">
+            APPOINTMENT
+        </p>
+
+
+        <h2>
+            Ready to book your visit?
+        </h2>
+
+
+        <p>
+
+            Send your preferred date and time
+            through WhatsApp. The clinic can
+            confirm the appointment directly
+            with you.
+
+        </p>
+
+    </div>
+
+
+
+    <a href="#"
+       id="whatsappBottom"
+       class="btn btn-primary large-button"
+       target="_blank"
+       rel="noopener">
+
+        💬 WhatsApp
+        +91 94899 60857
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container footer-content">
+
+
+    <img src="logo.jpg"
+         alt="Dental Clinic Logo">
+
+
+    <div>
+
+        <strong>
+            Dr. S. Peter MDS
+        </strong>
+
+
+        <p>
+
+            No. 34, 3rd Main Road,
+            Marriyal Nagar,
+            Reddiyarpalayam,
+            Puducherry - 10
+
+        </p>
+
+    </div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   PHONE NUMBER
+===================================================== */
+
+const whatsappNumber =
+    "919489960857";
+
+
+/* =====================================================
+   CLINIC ADDRESS
+===================================================== */
+
+const clinicAddress =
+    "No. 34, 3rd Main Road, Marriyal Nagar, Reddiyarpalayam, Puducherry - 10";
+
+
+/* =====================================================
+   GOOGLE MAPS URL
+===================================================== */
+
+const locationURL =
+    "https://www.google.com/maps/search/?api=1&query="
+    +
+    encodeURIComponent(clinicAddress);
+
+
+
+/* =====================================================
+   WHATSAPP MESSAGE
+===================================================== */
+
+const whatsappMessage =
+    "Hello Dr. S. Peter, I would like to book an appointment."
+    +
+    "\n\nName: "
+    +
+    "\nPreferred Date: "
+    +
+    "\nPreferred Time: ";
+
+
+/* =====================================================
+   WHATSAPP URL
+===================================================== */
+
+const whatsappURL =
+    "https://wa.me/"
+    +
+    whatsappNumber
+    +
+    "?text="
+    +
+    encodeURIComponent(whatsappMessage);
+
+
+
+/* =====================================================
+   PAGE LOADED
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+
+        /* =============================================
+           GOOGLE MAPS BUTTONS
+        ============================================== */
+
+        document.getElementById(
+            "mapLink"
+        ).href = locationURL;
+
+
+        document.getElementById(
+            "locationButton"
+        ).href = locationURL;
+
+
+
+        /* =============================================
+           WHATSAPP BUTTONS
+        ============================================== */
+
+        document.getElementById(
+            "appointmentButton"
+        ).href = whatsappURL;
+
+
+        document.getElementById(
+            "whatsappBottom"
+        ).href = whatsappURL;
+
+
+
+        /* =============================================
+           LOCATION QR CODE
+        ============================================== */
+
+        new QRCode(
+
+            document.getElementById(
+                "locationQR"
+            ),
+
+            {
+
+                text: locationURL,
+
+                width: 200,
+
+                height: 200,
+
+                colorDark: "#000000",
+
+                colorLight: "#ffffff",
+
+                correctLevel:
+                    QRCode.CorrectLevel.H
+
+            }
+
+        );
+
+
+
+        /* =============================================
+           APPOINTMENT QR CODE
+        ============================================== */
+
+        new QRCode(
+
+            document.getElementById(
+                "appointmentQR"
+            ),
+
+            {
+
+                text: whatsappURL,
+
+                width: 200,
+
+                height: 200,
+
+                colorDark: "#000000",
+
+                colorLight: "#ffffff",
+
+                correctLevel:
+                    QRCode.CorrectLevel.H
+
+            }
+
+        );
+
+
+    }
+
+);
+
+
+</script>
+
 
 </body>
 </html>
