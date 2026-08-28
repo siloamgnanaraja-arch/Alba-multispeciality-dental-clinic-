@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alba Multispeciality Dental Clinic</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffffff;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        header {
+            width: 100%;
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 10px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .clinic-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #7d0b1a;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d49a00;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 600px;
+            background: linear-gradient(135deg, #7d0b1a, #b3122d);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 10%;
+        }
+
+        .hero-content {
+            width: 55%;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #ffd35a;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #f5b400;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            transform: scale(1.05);
+            background: white;
+        }
+
+        .doctor-image {
+            width: 40%;
+            text-align: center;
+        }
+
+        .doctor-image img {
+            width: 100%;
+            max-width: 430px;
+            border-radius: 50%;
+            border: 6px solid #ffffff;
+            object-fit: cover;
+        }
+
+        /* ABOUT SECTION */
+
+        .about {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 38px;
+            color: #7d0b1a;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 17px;
+            color: #555;
+        }
+
+        /* DOCTOR SECTION */
+
+        .doctor-section {
+            background: #f7f7f7;
+            padding: 80px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .doctor-section img {
+            width: 320px;
+            max-width: 100%;
+            border-radius: 50%;
+        }
+
+        .doctor-info {
+            max-width: 600px;
+        }
+
+        .doctor-info h2 {
+            font-size: 36px;
+            color: #7d0b1a;
+            margin-bottom: 15px;
+        }
+
+        .doctor-info h3 {
+            color: #d49a00;
+            margin-bottom: 20px;
+        }
+
+        .doctor-info p {
+            color: #555;
+            font-size: 17px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .services-image {
+            margin: 30px auto;
+            max-width: 700px;
+        }
+
+        .services-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .services-grid {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-bottom: 4px solid #d49a00;
+        }
+
+        .service-box:hover {
+            transform: translateY(-8px);
+        }
+
+        .service-box h3 {
+            color: #7d0b1a;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #7d0b1a;
+            color: white;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-details p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .contact a {
+            color: #ffd35a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #171717;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media(max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 50px 20px;
+            }
+
+            .hero-content,
+            .doctor-image {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .doctor-image img {
+                max-width: 300px;
+                margin-bottom: 30px;
+            }
+
+            .doctor-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 60px 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav>
+
+            <div class="logo-container">
+                <img 
+                    src="logo.png"
+                    alt="Alba Multispeciality Dental Clinic Logo"
+                    class="clinic-logo"
+                >
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#doctor">Doctor</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Alba Multispeciality Dental Clinic</h1>
+
+            <h2>Your Smile, Our Priority</h2>
+
+            <p>
+                Professional and compassionate dental care for you and your family.
+                We provide modern dental treatments to help you achieve a healthy
+                and confident smile.
+            </p>
+
+            <a href="#contact" class="hero-btn">
+                Book an Appointment
+            </a>
+
+        </div>
+
+
+        <div class="doctor-image">
+
+            <img
+                src="doctor.png"
+                alt="Dr S. Peter MDS"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            Welcome to Alba Dental Clinic
+        </h2>
+
+        <p>
+            Alba Multispeciality Dental Clinic provides quality dental care
+            with a focus on patient comfort, hygiene and modern treatment.
+            We are committed to helping every patient maintain a healthy,
+            beautiful and confident smile.
+        </p>
+
+    </section>
+
+
+    <!-- DOCTOR -->
+
+    <section class="doctor-section" id="doctor">
+
+        <img
+            src="doctor.png"
+            alt="Dr S. Peter"
+        >
+
+        <div class="doctor-info">
+
+            <h2>Dr. S. Peter</h2>
+
+            <h3>MDS</h3>
+
+            <p>
+                Dr. S. Peter provides professional dental treatment with
+                personalized care for every patient. Our clinic focuses on
+                modern dental solutions, patient comfort and maintaining
+                long-term oral health.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <h2 class="section-title">
+            Our Dental Services
+        </h2>
+
+        <div class="services-image">
+
+            <img
+                src="services.jpg"
+                alt="Alba Dental Clinic Services"
+            >
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-box">
+                <h3>Dental Implants</h3>
+                <p>Permanent solutions for replacing missing teeth.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Crowns & Bridges</h3>
+                <p>Restore damaged or missing teeth with quality treatment.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Smile Designing</h3>
+                <p>Improve the appearance of your smile.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Root Canal Treatment</h3>
+                <p>Advanced treatment to save and protect your natural teeth.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Invisible Aligners</h3>
+                <p>Comfortable and clear teeth alignment solutions.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Teeth Cleaning & Whitening</h3>
+                <p>Professional cleaning and brighter smiles.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Full Mouth Rehabilitation</h3>
+                <p>Complete dental restoration and smile improvement.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Pediatric Dentistry</h3>
+                <p>Special dental care for children.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Tooth Coloured Fillings</h3>
+                <p>Natural-looking fillings for damaged teeth.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Orthodontic Braces</h3>
+                <p>Correct teeth alignment and improve your smile.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Complete & Partial Dentures</h3>
+                <p>Comfortable solutions for missing teeth.</p>
+            </div>
+
+            <div class="service-box">
+                <h3>Digital X-Ray</h3>
+                <p>Modern diagnostic imaging for accurate treatment.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-details">
+
+            <p>
+                <strong>Dr. S. Peter, MDS</strong>
+            </p>
+
+            <p>
+                📞
+                <a href="tel:+919489960857">
+                    +91 94899 60857
+                </a>
+            </p>
+
+            <p>
+                📞
+                <a href="tel:+919342404873">
+                    +91 93424 04873
+                </a>
+            </p>
+
+            <p>
+                📍 No. 34, 3rd Main Road,
+                Mariyal Nagar,
+                Reddiyarpalayam,
+                Puducherry - 10
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Alba Multispeciality Dental Clinic. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Smooth message when appointment button is clicked
+
+        document.querySelector(".hero-btn").addEventListener("click", function() {
+
+            console.log("Appointment section opened");
+
+        });
+
+    </script>
+
+</body>
+</html>
